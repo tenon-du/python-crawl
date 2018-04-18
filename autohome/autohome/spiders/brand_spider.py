@@ -8,15 +8,13 @@ from autohome.items import BrandItem
 class BrandSpider(scrapy.Spider):
     name = "brand"
     allowed_domains = 'autohome.com.cn'
-    url = 'https://www.autohome.com.cn/grade/carhtml/%s.html'
-
-    start_urls = ['https://www.autohome.com.cn/grade/carhtml/%s.html' % chr(ord('A') + i) for i in range(26)]
+    # start_urls = ['https://www.autohome.com.cn/grade/carhtml/%s.html' % chr(ord('A') + i) for i in range(26)]
 
     # 测试地址
-    # start_urls = ['https://www.autohome.com.cn/grade/carhtml/A.html']
+    start_urls = ['https://www.autohome.com.cn/grade/carhtml/A.html']
 
     def parse(self, response):
-        print("===>", response.url)
+        print "===> " + response.url
         for brands in response.xpath('body/dl'):
             item = BrandItem()
             item['id'] = brands.xpath('@id')[0].extract()

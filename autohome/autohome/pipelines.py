@@ -24,6 +24,7 @@ class JsonWithEncodingPipeline(object):
         self.file.close()
 
 
+# 解析品牌入库
 class MySqlBrandPipeline(object):
     def __init__(self):
         self.dbpool = adbapi.ConnectionPool(
@@ -59,6 +60,7 @@ class MySqlBrandPipeline(object):
         print(failue)
 
 
+# 解析车系入库
 class MySqlSeiralPipeline(object):
     def __init__(self):
         self.dbpool = adbapi.ConnectionPool(
