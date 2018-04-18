@@ -8,7 +8,6 @@
 #     https://doc.scrapy.org/en/latest/topics/settings.html
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-import os
 
 BOT_NAME = 'autohome'
 
@@ -65,8 +64,9 @@ DOWNLOAD_DELAY = 3
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # 'autohome.pipelines.JsonWithEncodingBrandPipeline': 300,
-    'autohome.pipelines.MySqlBrandPipeline': 300,
+    # 'autohome.pipelines.JsonWithEncodingPipeline': 300,
+    # 'autohome.pipelines.MySqlBrandPipeline': 300,
+    'autohome.pipelines.MySqlSeiralPipeline': 300,
 }
 # 日志级别
 LOG_LEVEL = 'INFO'

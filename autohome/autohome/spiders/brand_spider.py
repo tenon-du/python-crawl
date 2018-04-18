@@ -18,10 +18,10 @@ class BrandSpider(scrapy.Spider):
     def parse(self, response):
         print("===>", response.url)
         for brands in response.xpath('body/dl'):
-            brand = BrandItem()
-            brand['id'] = brands.xpath('@id')[0].extract()
-            brand['name'] = brands.xpath('dt/div/a/text()')[0].extract()
-            brand['logo'] = 'https:' + brands.xpath('dt/a/img/@src')[0].extract()
-            brand['initial'] = response.url[42:43]
-            brand['date'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
-            yield brand
+            item = BrandItem()
+            item['id'] = brands.xpath('@id')[0].extract()
+            item['name'] = brands.xpath('dt/div/a/text()')[0].extract()
+            item['logo'] = 'https:' + brands.xpath('dt/a/img/@src')[0].extract()
+            item['initial'] = response.url[42:43]
+            item['date'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+            yield item
