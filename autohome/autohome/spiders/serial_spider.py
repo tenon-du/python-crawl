@@ -2,7 +2,7 @@
 
 import scrapy
 import time
-from autohome.items import SeriesItem
+from autohome.items import SerialItem
 
 
 class BrandSpider(scrapy.Spider):
@@ -14,12 +14,12 @@ class BrandSpider(scrapy.Spider):
     # start_urls = ['https://www.autohome.com.cn/grade/carhtml/A.html']
 
     def parse(self, response):
-        print "===> " + response.url
+        print ("===> " + response.url)
         for brands in response.xpath('body/dl'):
             serials = brands.xpath('dd/ul/li')
             for serial in serials:
                 try:
-                    item = SeriesItem()
+                    item = SerialItem()
                     item['bid'] = brands.xpath('@id')[0].extract()
                     item['vendor'] = brands.xpath('dd/div/text()')[0].extract()
                     item['id'] = serial.xpath('@id')[0].extract()[1:]

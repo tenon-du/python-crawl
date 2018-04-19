@@ -14,7 +14,7 @@ class BrandSpider(scrapy.Spider):
     start_urls = ['https://www.autohome.com.cn/grade/carhtml/A.html']
 
     def parse(self, response):
-        print "===> " + response.url
+        print ("===> " + response.url)
         for brands in response.xpath('body/dl'):
             item = BrandItem()
             item['id'] = brands.xpath('@id')[0].extract()
