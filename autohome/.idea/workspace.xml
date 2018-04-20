@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3066e4ff-4ac9-4360-a4e0-0813b4b8f378" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autohome/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/autohome/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autohome/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/autohome/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autohome/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/autohome/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autohome/spiders/brand_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/autohome/spiders/brand_spider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autohome/spiders/model_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/autohome/spiders/model_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome/spiders/serial_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/autohome/spiders/serial_spider.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +35,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="model_spider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/autohome/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_spider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autohome/spiders/model_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="40" column="71" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+            <state relative-caret-position="233">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#15#26#0" expanded="true" />
               </folding>
@@ -52,8 +59,8 @@
       <file leaf-file-name="serial_spider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autohome/spiders/serial_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="25" column="75" lean-forward="true" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
+            <state relative-caret-position="309">
+              <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
               <folding>
                 <element signature="e#16#29#0" expanded="true" />
               </folding>
@@ -64,8 +71,8 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autohome/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+            <state relative-caret-position="1523">
+              <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
               <folding>
                 <element signature="e#192#205#0" expanded="true" />
               </folding>
@@ -76,8 +83,8 @@
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autohome/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="342">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -85,8 +92,8 @@
       <file leaf-file-name="brand_spider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autohome/spiders/brand_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+            <state relative-caret-position="266">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#16#29#0" expanded="true" />
               </folding>
@@ -96,10 +103,19 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>image</find>
       <find>}</find>
+      <find>11418</find>
+      <find>413</find>
     </findStrings>
     <replaceStrings>
       <replace>},</replace>
@@ -116,12 +132,13 @@
       <list>
         <option value="$PROJECT_DIR$/autohome.json" />
         <option value="$PROJECT_DIR$/serial.json" />
-        <option value="$PROJECT_DIR$/autohome/settings.py" />
-        <option value="$PROJECT_DIR$/autohome/spiders/brand_spider.py" />
         <option value="$PROJECT_DIR$/autohome/spiders/serial_spider.py" />
+        <option value="$PROJECT_DIR$/autohome/spiders/test_spider.py" />
         <option value="$PROJECT_DIR$/autohome/items.py" />
         <option value="$PROJECT_DIR$/autohome/pipelines.py" />
         <option value="$PROJECT_DIR$/autohome/spiders/model_spider.py" />
+        <option value="$PROJECT_DIR$/autohome/spiders/brand_spider.py" />
+        <option value="$PROJECT_DIR$/autohome/settings.py" />
       </list>
     </option>
   </component>
@@ -135,10 +152,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="30" />
-    <option name="y" value="25" />
-    <option name="width" value="1750" />
-    <option name="height" value="1005" />
+    <option name="x" value="71" />
+    <option name="y" value="-2" />
+    <option name="width" value="2188" />
+    <option name="height" value="1257" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -238,22 +255,31 @@
       <option name="project" value="LOCAL" />
       <updated>1524041222422</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="车型数据爬取">
+      <created>1524129148261</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1524129148261</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.32952926" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.4507846" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.4507846" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49865952" weight="0.32952926" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932975" weight="0.49500713" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26340482" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26340482" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297587" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32952926" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -265,7 +291,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.32905984" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32952926" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
@@ -329,7 +354,8 @@
     <MESSAGE value="移除多余的目录和配置文件" />
     <MESSAGE value="车系爬取入库" />
     <MESSAGE value="更新开发环境到python2.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新开发环境到python2.7" />
+    <MESSAGE value="车型数据爬取" />
+    <option name="LAST_COMMIT_MESSAGE" value="车型数据爬取" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -476,25 +502,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autohome/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="68" column="52" lean-forward="true" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/serial.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autohome/spiders/brand_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="e#16#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/scrapy/http/response/text.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -503,47 +512,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model.json">
+    <entry file="file://$PROJECT_DIR$/autohome/spiders/test_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-489">
-          <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autohome/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <element signature="e#192#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autohome/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autohome/spiders/serial_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="25" column="75" lean-forward="true" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
+        <state relative-caret-position="383">
+          <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="65" />
           <folding>
             <element signature="e#16#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="1359" column="87" selection-start-line="1359" selection-start-column="87" selection-end-line="1359" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autohome/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/autohome/spiders/model_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="40" column="71" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+        <state relative-caret-position="233">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#15#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autohome/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1523">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+          <folding>
+            <element signature="e#192#205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autohome/spiders/brand_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#16#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autohome/spiders/serial_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding>
+            <element signature="e#16#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autohome/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
         </state>
       </provider>
     </entry>

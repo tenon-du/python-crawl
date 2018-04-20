@@ -13,11 +13,10 @@ from autohome.items import ModelItem, levelMap
 class ModelSpider(scrapy.Spider):
     name = "model"
     allowed_domains = 'autohome.com.cn'
-    # start_urls = ['https://www.autohome.com.cn/grade/carhtml/%s.html' % chr(ord('A') + i) for i in range(26)]
+    start_urls = ['https://www.autohome.com.cn/grade/carhtml/%s.html' % chr(ord('A') + i) for i in range(26)]
 
     # 测试地址
-    start_urls = ['https://www.autohome.com.cn/grade/carhtml/N.html']
-    # start_urls = ['https://www.autohome.com.cn/692']
+    # start_urls = ['https://www.autohome.com.cn/grade/carhtml/Q.html']
 
     rules = (
         # 字母分区页
@@ -29,10 +28,6 @@ class ModelSpider(scrapy.Spider):
         # 历史年款车型
         Rule(SgmlLinkExtractor(allow=(r'.*www\.autohome\.com\.cn/ashx/series_allspec\.ashx?s=\d+&y=\d+&l=\d+$',)),
              callback='parse_model_selled', follow=True),
-
-        # 车型照片
-        # Rule(SgmlLinkExtractor(allow=(r'.* car\.autohome\.com\.cn/pic/series-s\d+/\d+-1\.html',)),
-        #      callback='parse_model_image', follow=True),
     )
 
     def parse(self, response):
@@ -66,8 +61,8 @@ class ModelSpider(scrapy.Spider):
                     item['id'] = model.xpath('div[@class="interval01-list-cars"]/div/p/@data-gcjid')[0].extract()
                     item['sid'] = serial_id
                     item['name'] = model.xpath('div[@class="interval01-list-cars"]/div/p/a/text()')[0].extract()
-                    item['group'] = group
-                    item['status'] = 1
+                    item['classify'] = group
+                    item['selling'] = '1'
                     item['date'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
                     yield item
 
@@ -97,11 +92,11 @@ class ModelSpider(scrapy.Spider):
             for model in models:
                 try:
                     item = ModelItem()
-                    item['id'] = model.xpath('td[@class="name_d"]/a/@href')[0].re(r'spec/(\d+)/')[0]
+                    item['id'] = model.xpath('td[@class="name_d"]/div/a/@href')[0].re(r'spec/(\d+)/')[0]
                     item['sid'] = serial_id
-                    item['name'] = model.xpath('td[@class="name_d"]/a/@title')[0].extract()
-                    # item['group'] = model['GroupName']
-                    item['status'] = 0
+                    item['name'] = model.xpath('td[@class="name_d"]/div/a/@title')[0].extract()
+                    item['classify'] = item['name'][:6]
+                    item['selling'] = '0'
                     item['date'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
                     yield item
                 except IndexError:
@@ -118,7 +113,7 @@ class ModelSpider(scrapy.Spider):
             item['id'] = model['Id']
             item['sid'] = serial_id
             item['name'] = model['Name']
-            item['group'] = model['GroupName']
-            item['status'] = 0
+            item['classify'] = model['GroupName']
+            item['selling'] = '0'
             item['date'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
             yield item

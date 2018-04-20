@@ -31,9 +31,8 @@ class ModelItem(scrapy.Item):
     id = scrapy.Field()
     sid = scrapy.Field()
     name = scrapy.Field()
-    pic = scrapy.Field()
-    group = scrapy.Field()
-    status = scrapy.Field()
+    classify = scrapy.Field()
+    selling = scrapy.Field()
     date = scrapy.Field()
 
 
