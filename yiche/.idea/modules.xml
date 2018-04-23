@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/autohome.iml" filepath="$PROJECT_DIR$/.idea/autohome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/yiche.iml" filepath="$PROJECT_DIR$/.idea/yiche.iml" />
     </modules>
   </component>
 </project>
