@@ -19,7 +19,7 @@ class BrandSpider(scrapy.Spider):
             vendors = brand.xpath('dd/div/text()')
             size = len(vendors)
             for i in range(0, size):
-                for serial in brand.xpath('dd/ul[%d]/li' % (i+1)):
+                for serial in brand.xpath('dd/ul[%d]/li' % (i + 1)):
                     try:
                         item = SerialItem()
                         item['bid'] = brand.xpath('@id')[0].extract()
