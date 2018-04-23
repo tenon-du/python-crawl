@@ -66,8 +66,8 @@ DOWNLOAD_DELAY = 3
 ITEM_PIPELINES = {
     # 'autohome.pipelines.JsonWithEncodingPipeline': 300,
     # 'autohome.pipelines.MySqlBrandPipeline': 300,
-    # 'autohome.pipelines.MySqlSeiralPipeline': 300,
-    'autohome.pipelines.MySqlModelPipeline': 300,
+    'autohome.pipelines.MySqlSeiralPipeline': 300,
+    # 'autohome.pipelines.MySqlModelPipeline': 300,
 }
 # 日志级别
 LOG_LEVEL = 'INFO'
