@@ -49,6 +49,7 @@ levelMap = {
     's': 9,
     'p': 10,
     'mb': 11,
+    'qk': 13,
     'suva0': 16,
     'suva': 17,
     'suvb': 18,
