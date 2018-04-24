@@ -64,10 +64,10 @@ DOWNLOAD_DELAY = 3
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'yiche.pipelines.YichePipeline': 300,
-#}
-
+ITEM_PIPELINES = {
+   'yiche.pipelines.JsonWithEncodingPipeline': 300,
+}
+LOG_LEVEL = 'INFO'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

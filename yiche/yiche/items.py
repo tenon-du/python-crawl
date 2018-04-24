@@ -8,7 +8,18 @@
 import scrapy
 
 
-class YicheItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+# 品牌
+class BrandItem(scrapy.Item):
+    id = scrapy.Field()
+    name = scrapy.Field()
+    logo = scrapy.Field()
+    initial = scrapy.Field()
+
+
+# 车系
+class SerialItem(scrapy.Item):
+    id = scrapy.Field()
+    bid = scrapy.Field()
+    name = scrapy.Field()
+    vendor = scrapy.Field()
+    logo = scrapy.Field()
