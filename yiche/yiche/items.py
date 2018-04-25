@@ -23,3 +23,13 @@ class SerialItem(scrapy.Item):
     name = scrapy.Field()
     vendor = scrapy.Field()
     logo = scrapy.Field()
+    sell = scrapy.Field()
+
+
+# 车型
+class ModelItem(scrapy.Item):
+    id = scrapy.Field()
+    sid = scrapy.Field()
+    name = scrapy.Field()
+    classify = scrapy.Field()
+    sell = scrapy.Field()
