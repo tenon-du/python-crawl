@@ -3,9 +3,9 @@ import json
 import re
 
 import scrapy
-from scrapy.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.spiders import Rule
 
+from scrapy.linkextractors import LinkExtractor
 from yiche.items import BrandItem, SerialItem, ModelItem
 
 
@@ -15,11 +15,12 @@ def replacea(matched):
 
 
 # 解析车系Item
-def parse_serial_item(serial, bid):
+def parse_serial_item(serial, bid, vendor):
     item = SerialItem()
     item['id'] = serial.xpath('div/div/a/@id')[0].re(r'n(\d+)')[0]
     item['bid'] = bid
     item['name'] = serial.xpath('div/div/a/@title')[0].extract()
+    item['vendor'] = vendor
     item['logo'] = serial.xpath('div/div/a/img/@src')[0].extract()
     sell = serial.xpath('div/ul/li[@class="price"]/a/text()')[0].re(ur'停售')
     item['sell'] = '0' if sell else '1'
@@ -31,13 +32,13 @@ class YiCheSpider(scrapy.Spider):
 
     rules = (
         # 所有车系
-        Rule(SgmlLinkExtractor(allow=(r'http://car\.bitauto\.com/tree_chexing/mb_\d+/',)), callback='parse_serial', follow=True),
+        Rule(LinkExtractor(allow=(r'http://car\.bitauto\.com/tree_chexing/mb_\d+/$',)), callback='parse_serial', follow=True),
         # 所有车型
-        Rule(SgmlLinkExtractor(allow=(r'http://car\.bitauto\.com/tree_chexing/sb_\d+/',)), callback='page_to_model', follow=True),
+        Rule(LinkExtractor(allow=(r'http://car\.bitauto\.com/tree_chexing/sb_\d+/$',)), callback='page_to_model', follow=True),
         # 在售车型
-        Rule(SgmlLinkExtractor(allow=(r'http://car\.bitauto\.com/\w+/',)), callback='parse_model', follow=True),
+        Rule(LinkExtractor(allow=(r'http://car\.bitauto\.com/\w+/$',)), callback='parse_model', follow=True),
         # 停售车型
-        Rule(SgmlLinkExtractor(allow=(r'http://car\.bitauto\.com/AjaxNew/GetNoSaleSerailListByYear\.ashx?csID=\d+&year=\d+$',)),
+        Rule(LinkExtractor(allow=(r'http://car\.bitauto\.com/AjaxNew/GetNoSaleSerailListByYear\.ashx?csID=\d+&year=\d+$',)),
              callback='parse_model_selled', follow=True),
     )
 
@@ -68,10 +69,10 @@ class YiCheSpider(scrapy.Spider):
             except KeyError:
                 pass
 
-        # url = 'http://car.bitauto.com/tree_chexing/mb_%s/' % '196'
+        # url = 'http://car.bitauto.com/tree_chexing/mb_%s/' % '2'
         # request = scrapy.Request(url, callback=self.parse_serial, dont_filter=True)
-        # request.meta['bid'] = '196'
-        # yield scrapy.Request(url, callback=self.parse_serial, dont_filter=True)
+        # request.meta['bid'] = '2'
+        # yield request
 
     def parse_serial(self, response):
         print '==> %s' % response.url
@@ -84,21 +85,20 @@ class YiCheSpider(scrapy.Spider):
             for i in range(size / 2):
                 vendor = brands[i * 2].xpath('a/text()')[0].re(r'(\w+)>>')[0]
                 for serial in brands[i * 2 + 1].xpath('div'):
-                    item = parse_serial_item(serial, bid)
-                    item['vendor'] = vendor
+                    item = parse_serial_item(serial, bid, vendor)
                     yield item
 
-                    url = 'http://car.bitauto.com/tree_chexing/tree_chexing_%s/' % item['id']
-                    request = scrapy.Request(url, callback=self.parse_serial, dont_filter=True)
+                    url = 'http://car.bitauto.com/tree_chexing/sb_%s/' % item['id']
+                    request = scrapy.Request(url, callback=self.page_to_model, dont_filter=True)
                     request.meta['sid'] = item['id']
                     yield request
         else:
             for serial in brands.xpath('div'):
-                item = parse_serial_item(serial, bid)
+                item = parse_serial_item(serial, bid, '')
                 yield item
 
-                url = 'http://car.bitauto.com/tree_chexing/tree_chexing_%s/' % item['id']
-                request = scrapy.Request(url, callback=self.parse_serial, dont_filter=True)
+                url = 'http://car.bitauto.com/tree_chexing/sb__%s/' % item['id']
+                request = scrapy.Request(url, callback=self.page_to_model, dont_filter=True)
                 request.meta['sid'] = item['id']
                 yield request
 
@@ -161,4 +161,5 @@ class YiCheSpider(scrapy.Spider):
                     item['sell'] = '0'
                     yield item
         except ValueError:
+            print 'model parse error,serial_id[%s].' % sid
             pass
