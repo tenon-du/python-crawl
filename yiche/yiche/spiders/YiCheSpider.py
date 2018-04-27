@@ -33,8 +33,6 @@ class YiCheSpider(scrapy.Spider):
     rules = (
         # 所有车系
         Rule(LinkExtractor(allow=(r'http://car\.bitauto\.com/tree_chexing/mb_\d+/$',)), callback='parse_serial', follow=True),
-        # 所有车型
-        Rule(LinkExtractor(allow=(r'http://car\.bitauto\.com/tree_chexing/sb_\d+/$',)), callback='page_to_model', follow=True),
         # 在售车型
         Rule(LinkExtractor(allow=(r'http://car\.bitauto\.com/\w+/$',)), callback='parse_model', follow=True),
         # 停售车型
@@ -46,6 +44,7 @@ class YiCheSpider(scrapy.Spider):
         url = 'http://api.car.bitauto.com/CarInfo/getlefttreejson.ashx?tagtype=chexing&pagetype=masterbrand&objid=0'
         yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
+    # 解析品牌
     def parse(self, response):
         print '==> %s' % response.url
 
@@ -69,11 +68,7 @@ class YiCheSpider(scrapy.Spider):
             except KeyError:
                 pass
 
-        # url = 'http://car.bitauto.com/tree_chexing/mb_%s/' % '2'
-        # request = scrapy.Request(url, callback=self.parse_serial, dont_filter=True)
-        # request.meta['bid'] = '2'
-        # yield request
-
+    # 解析车系
     def parse_serial(self, response):
         print '==> %s' % response.url
 
@@ -88,8 +83,8 @@ class YiCheSpider(scrapy.Spider):
                     item = parse_serial_item(serial, bid, vendor)
                     yield item
 
-                    url = 'http://car.bitauto.com/tree_chexing/sb_%s/' % item['id']
-                    request = scrapy.Request(url, callback=self.page_to_model, dont_filter=True)
+                    url = 'http://car.bitauto.com%s' % serial.xpath('div/div/a/@href')[0].extract()
+                    request = scrapy.Request(url, callback=self.parse_model, dont_filter=True)
                     request.meta['sid'] = item['id']
                     yield request
         else:
@@ -97,24 +92,12 @@ class YiCheSpider(scrapy.Spider):
                 item = parse_serial_item(serial, bid, '')
                 yield item
 
-                url = 'http://car.bitauto.com/tree_chexing/sb__%s/' % item['id']
-                request = scrapy.Request(url, callback=self.page_to_model, dont_filter=True)
+                url = 'http://car.bitauto.com%s' % serial.xpath('div/div/a/@href')[0].extract()
+                request = scrapy.Request(url, callback=self.parse_model, dont_filter=True)
                 request.meta['sid'] = item['id']
                 yield request
 
-        # url = 'http://car.bitauto.com/tree_chexing/sb_%s/' % '3887'
-        # request = scrapy.Request(url, callback=self.page_to_model, dont_filter=True)
-        # request.meta['sid'] = '3887'
-        # yield request
-
-    def page_to_model(self, response):
-        print '==> %s' % response.url
-
-        url = 'http://car.bitauto.com%s' % response.xpath('//div[@class="more"]/a[1]/@href')[0].extract()
-        request = scrapy.Request(url, callback=self.parse_model, dont_filter=True)
-        request.meta['sid'] = response.meta['sid']
-        yield request
-
+    # 解析车型
     def parse_model(self, response):
         print '==> %s' % response.url
 
@@ -122,11 +105,8 @@ class YiCheSpider(scrapy.Spider):
         # 在售车型
         classify = ''
         for tr in response.xpath('//*[@id="compare_sale"]/tbody/*'):
-            try:
-                th = tr.xpath('th[1]/text()')[1].extract().rstrip()
-                strong = tr.xpath('th[1]/strong/text()')[0].extract()
-                classify = strong + '/' + th
-            except IndexError:
+            tit = tr.xpath('@class')
+            if len(tit) == 0:
                 item = ModelItem()
                 item['id'] = tr.xpath('td[1]/a[1]/@href')[0].re(r'/m(\d+)/')[0]
                 item['sid'] = sid
@@ -134,6 +114,11 @@ class YiCheSpider(scrapy.Spider):
                 item['classify'] = classify
                 item['sell'] = '1'
                 yield item
+            else:
+                ths = tr.xpath('th[1]/text()')
+                th = ths[1].extract().rstrip() if len(ths) > 1 else ths[0].extract().rstrip()
+                strong = tr.xpath('th[1]/strong/text()')[0].extract()
+                classify = strong + (('/' + th) if len(th) > 0 else '')
 
         # 停售车型
         years = response.xpath('//*[@id="carlist_nosaleyear"]/a/@id').extract()
