@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51f129dd-197a-4529-9ba3-f883774b9cc9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-    </list>
+    <list default="true" id="51f129dd-197a-4529-9ba3-f883774b9cc9" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,38 +30,7 @@
     <favorites_list name="yiche" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="YiCheSpider.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yiche/spiders/YiCheSpider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="137" column="30" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
-              <folding>
-                <element signature="e#15#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142405">
-              <caret line="7495" selection-start-line="7495" selection-end-line="7495" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20881">
-              <caret line="1099" selection-start-line="1099" selection-end-line="1099" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,7 +43,11 @@
     <findStrings>
       <find>哈弗</find>
       <find>http://Car.bitauto.com</find>
+      <find>}</find>
     </findStrings>
+    <replaceStrings>
+      <replace>},</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -92,7 +61,6 @@
         <option value="$PROJECT_DIR$/brand.json" />
         <option value="$PROJECT_DIR$/yiche/spiders/BrandSpider.py" />
         <option value="$PROJECT_DIR$/yiche/spiders/SerialSpider.py" />
-        <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/yiche/items.py" />
         <option value="$PROJECT_DIR$/yiche/run.py" />
         <option value="$PROJECT_DIR$/yiche/pipelines.py" />
@@ -103,6 +71,7 @@
         <option value="$PROJECT_DIR$/yiche/spiders/YiCheSpider.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/log.txt" />
+        <option value="$PROJECT_DIR$/data.json" />
       </list>
     </option>
   </component>
@@ -256,18 +225,24 @@
       <option name="project" value="LOCAL" />
       <updated>1524800264252</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="上传爬取日志">
+      <created>1524881511615</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1524881511615</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32952926" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32952926" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32952926" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.29101285" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3281027" />
@@ -329,7 +304,8 @@
     <MESSAGE value="完成车型的爬取;&#10;新问题: http://car.bitauto.com/tree_chexing/mb_27/会出现报错" />
     <MESSAGE value="修复bid参数丢失的问题;&#10;配置请求头;&#10;增加执行py;" />
     <MESSAGE value="优化车系的爬取代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化车系的爬取代码" />
+    <MESSAGE value="上传爬取日志" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传爬取日志" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/yiche/spiders/YiCheSpider.py">
@@ -454,17 +430,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log.txt">
+    <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142405">
-          <caret line="7495" selection-start-line="7495" selection-end-line="7495" />
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
+    <entry file="file://$PROJECT_DIR$/log.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20881">
-          <caret line="1099" selection-start-line="1099" selection-end-line="1099" />
+        <state relative-caret-position="141037">
+          <caret line="7495" selection-start-line="7495" selection-end-line="7495" />
         </state>
       </provider>
     </entry>
