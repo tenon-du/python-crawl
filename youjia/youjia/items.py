@@ -8,7 +8,9 @@
 import scrapy
 
 
-class YoujiaItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class PriceItem(scrapy.Item):
+    area = scrapy.Field()
+    _89 = scrapy.Field()
+    _92 = scrapy.Field()
+    _95 = scrapy.Field()
+    _0 = scrapy.Field()
