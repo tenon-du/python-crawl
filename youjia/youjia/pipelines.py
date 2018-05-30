@@ -48,11 +48,11 @@ class MySqlPipeline(object):
 
         n = tb.execute('select * from oil_price where area = %s ', (item["area"],))
         if n == 1:
-            tb.execute('update oil_price set _89 = %s , _92 = %s ,_95 = %s ,_0 = %s where area = %s',
-                       (item["_89"], item["_92"], item["_95"], item["_0"], item["area"]))
+            tb.execute('update oil_price set _89 = %s , _92 = %s ,_95 = %s ,_0 = %s ,update_time = %s where area = %s',
+                       (item["_89"], item["_92"], item["_95"], item["_0"], item['update_time'], item["area"]))
         else:
-            tb.execute('insert into oil_price(area,_89,_92,_95,_0) values(%s,%s,%s,%s,%s)',
-                       (item["area"], item["_89"], item["_92"], item["_95"], item["_0"]))
+            tb.execute('insert into oil_price(area,_89,_92,_95,_0,update_time) values(%s,%s,%s,%s,%s,%s)',
+                       (item["area"], item["_89"], item["_92"], item["_95"], item["_0"], item['update_time']))
 
     # 错误处理方法
     @staticmethod

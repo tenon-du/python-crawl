@@ -14,3 +14,4 @@ class PriceItem(scrapy.Item):
     _92 = scrapy.Field()
     _95 = scrapy.Field()
     _0 = scrapy.Field()
+    update_time = scrapy.Field()
