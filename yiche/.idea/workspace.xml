@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51f129dd-197a-4529-9ba3-f883774b9cc9" name="Default" comment="" />
+    <list default="true" id="51f129dd-197a-4529-9ba3-f883774b9cc9" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../youjia/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +33,7 @@
     <favorites_list name="yiche" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,9 +88,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="251" />
-    <option name="y" value="51" />
-    <option name="width" value="1453" />
+    <option name="x" value="250" />
+    <option name="y" value="50" />
+    <option name="width" value="1455" />
     <option name="height" value="865" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -98,7 +101,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,6 +123,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,20 +242,18 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32952926" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905984" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32952926" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.29101285" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3281027" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49808428" visible="true" weight="0.25495377" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database" order="14" sideWeight="0.50212765" weight="0.25392297" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32952926" />
       <window_info anchor="bottom" id="SciView" order="15" sideWeight="0.5019157" weight="0.2553495" />
-      <window_info anchor="bottom" id="Structure" order="16" weight="0.24964337" />
-      <window_info id="Favorites" order="1" weight="0.3293954" />
+      <window_info anchor="bottom" id="Structure" order="16" side_tool="true" weight="0.24964337" />
+      <window_info id="Favorites" order="1" side_tool="true" weight="0.3293954" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -260,6 +261,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32952926" />
+      <window_info anchor="bottom" id="Messages" order="13" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,9 +315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1653">
           <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-          <folding>
-            <element signature="e#15#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -322,9 +322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="23" />
-          <folding>
-            <element signature="e#193#206#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -364,12 +361,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yiche/data.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/sqldialects.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/yiche/data.json" />
+    <entry file="file://$PROJECT_DIR$/.idea/sqldialects.xml" />
     <entry file="file://C:/Python27/Lib/site-packages/scrapy/linkextractors/lxmlhtml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -391,25 +384,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="66" column="108" selection-start-line="66" selection-start-column="108" selection-end-line="66" selection-end-column="108" />
-          <folding>
-            <element signature="e#193#206#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yiche/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/yiche/spiders/FixSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="24" column="99" selection-start-line="24" selection-start-column="99" selection-end-line="24" selection-end-column="99" />
-          <folding>
-            <element signature="e#15#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/yiche/spiders/FixSpider.py" />
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -417,26 +398,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/yiche/spiders/YiCheSpider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="137" column="30" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
-          <folding>
-            <element signature="e#15#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data.json" />
     <entry file="file://$PROJECT_DIR$/log.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141037">
