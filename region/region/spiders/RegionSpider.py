@@ -95,7 +95,7 @@ class RegionSpider(scrapy.Spider):
         for tr in response.xpath('//tr[@class="towntr"]'):
             item = RegionItem()
             item['adCode'] = tr.xpath('td[1]/a/text()')[0].extract()[0:9]
-            item['name'] = tr.xpath('td[2]/a/text()')[0].extract().replace('办事处', '')
+            item['name'] = tr.xpath('td[2]/a/text()')[0].extract()
             item['py'] = p.get_pinyin(item['name'], ' ')
             item['initial'] = p.get_initials(item['name'], '')[0:1]
             item['level'] = 4
@@ -119,9 +119,6 @@ class RegionSpider(scrapy.Spider):
             for tr in response.xpath('//tr[@class="villagetr"]'):
                 item = RegionItem()
                 item['adCode'] = tr.xpath('td[1]/text()')[0].extract()
-                import sys
-                reload(sys)
-                sys.setdefaultencoding('utf8')
                 item['name'] = tr.xpath('td[3]/text()')[0].extract()
                 item['py'] = p.get_pinyin(item['name'], ' ')
                 item['initial'] = p.get_initials(item['name'], '')[0:1]
