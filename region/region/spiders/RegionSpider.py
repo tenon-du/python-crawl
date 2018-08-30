@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 import scrapy
 from xpinyin import Pinyin
@@ -15,7 +15,7 @@ class RegionSpider(scrapy.Spider):
 
     # 解析省份
     def parse(self, response):
-        print '==> %s' % response.url
+        print('==> %s' % response.url)
         p = Pinyin()
         try:
             for tr in response.xpath('//tr[@class="provincetr"]'):
@@ -38,7 +38,7 @@ class RegionSpider(scrapy.Spider):
 
     # 解析城市
     def parse_city(self, response):
-        print '==> %s' % response.url
+        print('==> %s' % response.url)
         pid = response.meta['pid']
 
         p = Pinyin()
@@ -60,7 +60,7 @@ class RegionSpider(scrapy.Spider):
 
     # 解析区(县)
     def parse_county(self, response):
-        print '==> %s' % response.url
+        print('==> %s' % response.url)
         pid = response.meta['pid']
 
         p = Pinyin()
@@ -87,7 +87,7 @@ class RegionSpider(scrapy.Spider):
 
     # 解析街道(乡镇)
     def parse_town(self, response):
-        print '==> %s' % response.url
+        print('==> %s' % response.url)
         pid = response.meta['pid']
 
         p = Pinyin()
@@ -96,6 +96,9 @@ class RegionSpider(scrapy.Spider):
             item = RegionItem()
             item['adCode'] = tr.xpath('td[1]/a/text()')[0].extract()[0:9]
             item['name'] = tr.xpath('td[2]/a/text()')[0].extract()
+            if '办事处' in item['name']:
+                item['name'] = item['name'].replace('办事处', '')
+
             item['py'] = p.get_pinyin(item['name'], ' ')
             item['initial'] = p.get_initials(item['name'], '')[0:1]
             item['level'] = 4
@@ -111,7 +114,7 @@ class RegionSpider(scrapy.Spider):
     # 解析居委会(村)
     @staticmethod
     def parse_village(response):
-        print '==> %s' % response.url
+        print('==> %s' % response.url)
         pid = response.meta['pid']
 
         p = Pinyin()
@@ -120,6 +123,22 @@ class RegionSpider(scrapy.Spider):
                 item = RegionItem()
                 item['adCode'] = tr.xpath('td[1]/text()')[0].extract()
                 item['name'] = tr.xpath('td[3]/text()')[0].extract()
+
+                if '居民委员会' in item['name']:
+                    item['name'] = item['name'].replace('居民委员会', '')
+                if '村民委员会' in item['name']:
+                    item['name'] = item['name'].replace('村民委员会', '村')
+                if '村委会委会' in item['name']:
+                    item['name'] = item['name'].replace('村委会委会', '村')
+                if '居委会' in item['name']:
+                    item['name'] = item['name'].replace('居委会', '')
+                if '村村村委会' in item['name']:
+                    item['name'] = item['name'].replace('村村村委会', '村')
+                if '村村委会' in item['name']:
+                    item['name'] = item['name'].replace('村村委会', '村')
+                if '村村' in item['name']:
+                    item['name'] = item['name'].replace('村村', '村')
+
                 item['py'] = p.get_pinyin(item['name'], ' ')
                 item['initial'] = p.get_initials(item['name'], '')[0:1]
                 item['level'] = 5
